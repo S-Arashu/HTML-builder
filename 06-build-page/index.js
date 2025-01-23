@@ -35,8 +35,9 @@ async function createProject() {
           path.join(__dirname, 'components', component.name),
           'utf8',
         );
+
         contentTemplate = contentTemplate.replace(
-          `{{${componentName}}}`,
+          new RegExp(`{{${componentName}}}`, 'g'),
           componentContent,
         );
       }
